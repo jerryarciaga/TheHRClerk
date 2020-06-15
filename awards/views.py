@@ -1,4 +1,7 @@
 from django.shortcuts import render
 
-def home(request):
-    return render(request, 'base.html')
+def index(request):
+    context = {
+        'title': 'Awards Index',
+    }
+    return render(request, 'awards/awards_index.html')
