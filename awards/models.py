@@ -8,9 +8,9 @@ class Awardee(models.Model):
     award = models.CharField(max_length=5)
 
     def __str__(self):
-        if middle_initial:
+        if self.middle_initial:
             name = f'{self.last_name}, {self.first_name} {self.middle_initial}.'
         else:
             name = f'{self.last_name}, {self.first_name}'
         
-        return f'{name} - {award}'
+        return f'{name} - {self.award}'
