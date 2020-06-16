@@ -1,2 +1,9 @@
 # TheHRClerk
-<h1>A web app project for general personnel needs</h1>
+
+## Overview
+
+## Getting Started
+
+## Contribution
+
+## Disclaimer
