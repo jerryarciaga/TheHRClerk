@@ -16,6 +16,7 @@ Welcome to TheHRClerk! For HR Professionals, managing personnel records can be d
 * Activate the virtual environment:<br>
   * For Windows: `.\virtualenv\Scripts\activate\`
   * For MacOS/Linux/Unix: `source virtualenv/source/activate`
+* Installed the required dependencies: `pip install -r requirements.txt`
 * Create an admin account by running `python manage.py createsuperuser` and following the prompts.
 * To generate SQL code using the current model(s), run `python manage.py makemigrations`.
 * To migrate data to your database, run `python manage.py migrate`
