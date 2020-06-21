@@ -9,9 +9,14 @@ class Awardee(models.Model):
 
     # Award data
     award = models.CharField(max_length=5)
-    from_date = models.DateField(null=True)
-    to_date = models.DateField(null=True)
-    presentation_date = models.DateField(null=True)
+    from_date = models.DateField()
+    to_date = models.DateField()
+    presentation_date = models.DateField()
+
+    # Recommender data
+    recommender_first_name = models.CharField(max_length=50)
+    recommender_middle_initial = models.CharField(max_length=1, blank=True)
+    recommender_last_name = models.CharField(max_length=50)
     
 
     def __str__(self):
