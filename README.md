@@ -21,6 +21,7 @@ Welcome to TheHRClerk! For HR Professionals, managing personnel records can be d
   * localhost:8000/awards
 
 ## Contribution
+Please feel free to contribute either through pull requests or feedback. I would appreciate any comments and insights to improve my project and my skills.
 
 ## Disclaimer
 This project is unofficial.
