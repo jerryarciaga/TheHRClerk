@@ -21,6 +21,7 @@ Welcome to TheHRClerk! For HR Professionals, managing personnel records can be d
 * Once activated, run the server by executing the `runserver` command from `manage.py`:<br>
   `python manage.py runserver`
 * If no errors are encountered, open up a web browser and go to the following available link (more updates coming soon):
+  * localhost:8000
   * localhost:8000/awards
 
 ## Contribution
