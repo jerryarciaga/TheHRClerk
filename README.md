@@ -5,7 +5,7 @@ Welcome to TheHRClerk! For HR Professionals, managing personnel records can be d
 
 ## Getting Started
 ### Required Software
-* Python 3 with pip installed
+* <a href='https://python.org'>Python 3</a> with pip installed
 * <a href='https://pypi.org/project/virtualenv/'>Virtualenv</a>
 
 ### Setup
