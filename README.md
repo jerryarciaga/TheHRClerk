@@ -22,9 +22,8 @@ Welcome to TheHRClerk! For HR Professionals, managing personnel records can be d
 * To migrate data to your database, run `python manage.py migrate`
 * Once activated, run the server by executing the `runserver` command from `manage.py`:<br>
   `python manage.py runserver`
-* If no errors are encountered, open up a web browser and go to the following available links (more updates coming soon):
+* If no errors are encountered, open up a web browser and go to the following url (more updates coming soon):
   * localhost:8000
-  * localhost:8000/awards
 
 ## Contribution
 Please feel free to contribute either through pull requests or feedback. I would appreciate any comments and insights to improve my project and my skills.
