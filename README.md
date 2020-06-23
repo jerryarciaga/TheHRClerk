@@ -10,9 +10,9 @@ Welcome to TheHRClerk! For HR Professionals, managing personnel records can be d
 
 ### Setup
 * Start by cloning this repository: `git clone https://github.com/jerryarciaga/TheHRClerk`
+* Move to the location of the repository: `cd TheHRClerk`
 * Open up a terminal/powershell, then create a virtual environment for the project using:<br>
 `virtualenv -p python3 virtualenv`<br>You can also replace python3 with the path to the Python 3 application
-* Move to the location of the repository: `cd TheHRClerk`
 * Activate the virtual environment:<br>
   * For Windows: `.\virtualenv\Scripts\activate\`
   * For MacOS/Linux/Unix: `source virtualenv/source/activate`
@@ -22,9 +22,8 @@ Welcome to TheHRClerk! For HR Professionals, managing personnel records can be d
 * To migrate data to your database, run `python manage.py migrate`
 * Once activated, run the server by executing the `runserver` command from `manage.py`:<br>
   `python manage.py runserver`
-* If no errors are encountered, open up a web browser and go to the following available links (more updates coming soon):
+* If no errors are encountered, open up a web browser and go to the following available url:
   * localhost:8000
-  * localhost:8000/awards
 
 ## Contribution
 Please feel free to contribute either through pull requests or feedback. I would appreciate any comments and insights to improve my project and my skills.
