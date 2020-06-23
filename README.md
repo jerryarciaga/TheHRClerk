@@ -24,6 +24,8 @@ Welcome to TheHRClerk! For HR Professionals, managing personnel records can be d
   `python manage.py runserver`
 * If no errors are encountered, open up a web browser and go to the following available url:
   * localhost:8000
+  
+![TheHRClerk Home Page](/images/thehrclerk_home_page.JPG)
 
 ## Contribution
 Please feel free to contribute either through pull requests or feedback. I would appreciate any comments and insights to improve my project and my skills.
