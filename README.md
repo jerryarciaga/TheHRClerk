@@ -1,5 +1,7 @@
 # TheHRClerk
 
+![TheHRClerk Home Page](/images/thehrclerk_home_page.JPG)
+
 ## Overview
 Welcome to TheHRClerk! For HR Professionals, managing personnel records can be daunting, tedious and repetitive. This project aims to automate low-level tasks including, but not limited to updating trackers, filling out forms, generating templates and creating certificates.
 
@@ -9,6 +11,7 @@ Welcome to TheHRClerk! For HR Professionals, managing personnel records can be d
 * <a href='https://pypi.org/project/virtualenv/'>Virtualenv</a>
 
 ### Setup
+#### Setting up the Environment
 * Start by cloning this repository: `git clone https://github.com/jerryarciaga/TheHRClerk`
 * Move to the location of the repository: `cd TheHRClerk`
 * Open up a terminal/powershell, then create a virtual environment for the project using:<br>
@@ -18,14 +21,11 @@ Welcome to TheHRClerk! For HR Professionals, managing personnel records can be d
   * For MacOS/Linux/Unix: `source virtualenv/source/activate`
 * Installed the required dependencies: `pip install -r requirements.txt`
 * Create an admin account by running `python manage.py createsuperuser` and following the prompts.
-* To generate SQL code using the current model(s), run `python manage.py makemigrations`.
 * To migrate data to your database, run `python manage.py migrate`
 * Once activated, run the server by executing the `runserver` command from `manage.py`:<br>
   `python manage.py runserver`
 * If no errors are encountered, open up a web browser and go to the following available url:
   * localhost:8000
-  
-![TheHRClerk Home Page](/images/thehrclerk_home_page.JPG)
 
 ## Contribution
 Please feel free to contribute either through pull requests or feedback. I would appreciate any comments and insights to improve my project and my skills.
