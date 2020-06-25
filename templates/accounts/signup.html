@@ -3,5 +3,10 @@
 {% block title %} TheHRClerk - Sign Up{% endblock %}
 
 {% block content %}
-<h1 class="lead">You are now about to Sign Up<h1>
+<h1 class="lead">Sign Up</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign Up</button>
+</form>
 {% endblock %}
