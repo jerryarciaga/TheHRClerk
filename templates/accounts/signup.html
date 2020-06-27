@@ -1,13 +1,13 @@
 {% extends '../base.html' %}
 
-{% block title %} TheHRClerk - Sign Up{% endblock %}
+{% block title %} TheHRClerk | Sign Up{% endblock %}
 
 {% block content %}
 <h1 class="lead display-4">Sign Up</h1>
 <form method="post">
     {% csrf_token %}
     {% for field in form %}
-    <p>
+    <div class="form-group">
         {{ field.label_tag }}<br>{{ field }}<br>
         {% if field.help_text %}
             <small class="form-text text-muted">{{ field.help_text }}</small>
@@ -15,7 +15,7 @@
         {% for error in field.errors %}
             <p style="color: red">{{ error }}</p>
         {% endfor %}
-    </p>
+    </div>
     {% endfor %}
     <button type="submit" class="btn btn-primary">Sign Up</button>
 </form>
