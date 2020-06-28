@@ -3,12 +3,26 @@
 {% block title %} TheHRClerk | Log In{% endblock %}
 
 {% block content %}
-<h1 class="lead display-4">Log In<h1>
-
-<form method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<button type="submit">Login</button>
-</form>
-
+<div class="row">
+    <div class="col-sm"></div>
+    <div class="col-sm jumbotron">
+        <h1 class="lead display-4">Log In</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}<br>{{ field }}<br>
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </form>
+    </div>
+    <div class="col-sm"></div>
+</div>
 {% endblock %}
