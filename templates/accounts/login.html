@@ -7,6 +7,9 @@
     <div class="col-sm"></div>
     <div class="col-sm jumbotron">
         <h1 class="lead display-4">Log In</h1>
+        {% if form.errors %}
+        <p class="text-danger">Your credentials cannot be verified.<br>Please try again.</p>
+        {% endif %}
         <form method="post">
             {% csrf_token %}
             {% for field in form %}
