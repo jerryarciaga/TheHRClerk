@@ -21,6 +21,9 @@ def signup(request):
     return render(request, 'accounts/signup.html', {'form' : form})
 
 def userlogin(request):
+    if request.user.is_authenticated:
+        logout(request)
+
     return render(request, 'accounts/login.html')
 
 def userlogout(request):
