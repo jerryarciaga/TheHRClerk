@@ -123,6 +123,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+## Custom Settings ##
+# Static file directory collection
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Account Verification Protocols
+LOGIN_REDIRECT_URL = 'home:home'
+
+
