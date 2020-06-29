@@ -1,5 +1,7 @@
 {% extends '../base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block title %} TheHRClerk | Log In{% endblock %}
 
 {% block content %}
@@ -14,10 +16,7 @@
             {% csrf_token %}
             {% for field in form %}
             <div class="form-group">
-                {{ field.label_tag }}<br>{{ field }}<br>
-                {% if field.help_text %}
-                    <small class="form-text text-muted">{{ field.help_text }}</small>
-                {% endif %}
+                {{ field|as_crispy_field }}
                 {% for error in field.errors %}
                     <p style="color: red">{{ error }}</p>
                 {% endfor %}
