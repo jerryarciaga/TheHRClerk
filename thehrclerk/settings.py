@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Third-party apps
+    'crispy_forms',
+
     # My apps
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
@@ -133,4 +136,5 @@ STATICFILES_DIRS = [
 # Account Verification Protocols
 LOGIN_REDIRECT_URL = 'home:home'
 
-
+# From django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
