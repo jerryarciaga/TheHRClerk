@@ -4,12 +4,12 @@ from django.contrib.auth.models import User
 
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(
-        label="First Name:",
+        label="First Name",
         max_length=30,
         required=True,
         )
     last_name = forms.CharField(
-        label="Last Name:",
+        label="Last Name",
         max_length=30,
         required=True,
         )
