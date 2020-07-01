@@ -6,7 +6,7 @@ from .forms import SignUpForm
 def signup(request):
     # Log any user out when trying to make an account
     if request.user is not None:
-        return redirect('home:home')
+        logout(request)
     
     # Redirect to home if user successfully signs up
     if request.method == 'POST':
