@@ -14,14 +14,12 @@
         {% endif %}
         <form method="post">
             {% csrf_token %}
-            {% for field in form %}
-            <div class="form-group">
-                {{ field|as_crispy_field }}
-                {% for error in field.errors %}
-                    <p style="color: red">{{ error }}</p>
-                {% endfor %}
+            <div class="form-row">
+                {{ form.username|as_crispy_field }}
             </div>
-            {% endfor %}
+            <div class="form-row">
+                {{ form.password|as_crispy_field }}
+            </div>
             <button type="submit" class="btn btn-primary">Log In</button>
         </form>
     </div>
