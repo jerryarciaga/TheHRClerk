@@ -128,6 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 ## Custom Settings ##
+
 # Static file directory collection
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
