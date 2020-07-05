@@ -12,6 +12,23 @@ class ProfileInline(admin.StackedInline):
 
 class CustomUserAdmin(UserAdmin):
     inlines = (ProfileInline, )
+    list_display = (
+        'email',
+        'get_rank',
+        'first_name',
+        'last_name',
+        'is_staff',
+        'get_unit',
+    )
+    list_select_related = ('profile', )
+
+    def get_rank(self, instance):
+        return instance.profile.rank
+    get_rank.short_description = 'Rank'
+
+    def get_unit(self, instance):
+        return instance.profile.unit
+    get_unit.short_description = 'Unit'
 
     def get_inline_instances(self, request, obj=None):
         if not obj:
