@@ -8,6 +8,7 @@ from django.db import transaction
 from .forms import SignUpForm, ProfileForm
 
 class SignUpView(View):
+    """Renders a Sign Up view on GET and creates a user on POST """
     user_form = SignUpForm
     profile_form = ProfileForm
     template_name = 'accounts/signup.html'
@@ -17,6 +18,9 @@ class SignUpView(View):
     }
 
     def get(self, request, *args, **kwargs):
+        """
+        Log any user out, then render SignUpForm
+        """
         if request.user is not None:
             logout(request)
         user_form = self.user_form()
@@ -29,6 +33,11 @@ class SignUpView(View):
     
     @method_decorator(transaction.atomic)
     def post(self, request, *args, **kwargs):
+        """
+        Save user info when the Sign Up button is pressed. Validate the data,
+        checking for any errors. If valid, log the user in then update the
+        user with data from the Profile Form.
+        """
         user_form = self.user_form(request.POST)
         profile_form = self.profile_form(request.POST)
         if user_form.is_valid() and profile_form.is_valid():
@@ -43,5 +52,6 @@ class SignUpView(View):
 
 
 def userlogout(request):
+    """Log the current user out, then redirect to the home page."""
     logout(request)
     return redirect('home:home')
