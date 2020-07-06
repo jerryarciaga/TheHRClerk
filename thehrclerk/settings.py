@@ -135,6 +135,7 @@ STATICFILES_DIRS = [
 ]
 
 # Account Verification Protocols
+LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'home:home'
 
 # From django-crispy-forms
