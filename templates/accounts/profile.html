@@ -1,0 +1,50 @@
+{% extends '../base.html' %}
+
+{% block title %}
+{% if user.is_authenticated %}
+    {{ user.profile.rank }} {{ user.last_name }} | Profile
+{% else %}
+    TheHRClerk | Profile
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-8">
+        <h1 class="lead display-4">View Profile</h1>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">Rank</th>
+                    <td>{{ user.profile.rank }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Full Name</th>
+                    <td>{{ user.first_name }} {{ user.last_name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Unit</th>
+                    <td>{{ user.profile.unit }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Username</th>
+                    <td>{{ user.username }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Email Address</th>
+                    <td>{{ user.email }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">Update Profile</a>
+            <a href="#" class="list-group-item list-group-item-action">Request for Access</a>
+            <a href="#" class="list-group-item list-group-item-action">Remove Account</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
