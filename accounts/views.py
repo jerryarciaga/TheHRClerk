@@ -4,8 +4,9 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.db import transaction
+from django.contrib.auth.decorators import login_required
 
-from .forms import SignUpForm, ProfileForm
+from .forms import SignUpForm, ProfileForm, UpdateUserForm
 
 class SignUpView(View):
     """Renders a Sign Up view on GET and creates a user on POST """
@@ -50,6 +51,18 @@ class SignUpView(View):
             profile_form.save()
             return redirect('home:home')
 
+class UserProfileView(View):
+    template_name = 'accounts/profile.html'
+    
+    @method_decorator(login_required)
+    def get(self, request, *args, **kwargs):
+        return render(request, template_name=self.template_name)
+
+# TODO create view to update user info
+#class UpdateUserView(View):
+#    """ Handles changes in user info """
+#    user_form = UpdateUserForm
+#    profile_form = ProfileForm
 
 def userlogout(request):
     """Log the current user out, then redirect to the home page."""
