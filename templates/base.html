@@ -52,7 +52,7 @@
               <ul class="navbar-nav">
               {% if user.is_authenticated %}
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'accounts:profile' %}">
                         {% if user.first_name and user.last_name and user.profile.rank %}
                             {{user.profile.rank }} {{ user.first_name }} {{ user.last_name }}
                         {% else %}
