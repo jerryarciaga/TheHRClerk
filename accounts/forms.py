@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from .models import Profile
 
 class SignUpForm(UserCreationForm):
+    """ Contains basic user information (username, email, etc). """
     first_name = forms.CharField(
         label = 'First Name',
         max_length = 30,
@@ -22,6 +23,7 @@ class SignUpForm(UserCreationForm):
     )
 
     class Meta:
+        """ Specifies the user form fields to fill out. """
         model = User
         fields = (
             'username',
@@ -33,6 +35,10 @@ class SignUpForm(UserCreationForm):
         )
 
 class ProfileForm(forms.ModelForm):
+    """ 
+    This is an extension of the basic user info to fill out.
+    Includes the user's rank and unit.
+    """
     rank = forms.CharField(
         label = 'Rank',
         max_length = 3,
@@ -47,6 +53,7 @@ class ProfileForm(forms.ModelForm):
     )
 
     class Meta:
+        """ Specifies the form fields for additional User info. """
         model = Profile
         fields = (
             'rank',
