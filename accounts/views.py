@@ -52,10 +52,12 @@ class SignUpView(View):
             return redirect('home:home')
 
 class UserProfileView(View):
+    """View the user's information and allow for updates and account removal."""
     template_name = 'accounts/profile.html'
     
     @method_decorator(login_required)
     def get(self, request, *args, **kwargs):
+        """Only display this page if there is a valid account logged in."""
         return render(request, template_name=self.template_name)
 
 # TODO create view to update user info
