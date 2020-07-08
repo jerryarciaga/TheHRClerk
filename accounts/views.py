@@ -6,7 +6,7 @@ from django.utils.decorators import method_decorator
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
 
-from .forms import SignUpForm, ProfileForm, UpdateUserForm
+from .forms import SignUpForm, ProfileForm
 
 class SignUpView(View):
     """Renders a Sign Up view on GET and creates a user on POST """
