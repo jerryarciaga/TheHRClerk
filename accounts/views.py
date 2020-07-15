@@ -6,7 +6,7 @@ from django.utils.decorators import method_decorator
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
 
-from .forms import SignUpForm, ProfileForm
+from .forms import SignUpForm, ProfileForm, UpdateUserForm
 
 class SignUpView(View):
     """Renders a Sign Up view on GET and creates a user on POST """
@@ -60,11 +60,31 @@ class UserProfileView(View):
         """Only display this page if there is a valid account logged in."""
         return render(request, template_name=self.template_name)
 
-# TODO create view to update user info
-#class UpdateUserView(View):
-#    """ Handles changes in user info """
-#    user_form = UpdateUserForm
-#    profile_form = ProfileForm
+class UpdateUserView(View):
+    """ Handles changes in user info """
+    user_form = UpdateUserForm
+    profile_form = ProfileForm
+    template_name = 'accounts/update_user.html'
+    context = {
+        'user_form': user_form,
+        'profile_form': profile_form,
+    }
+
+    @method_decorator(login_required)
+    def get(self, request, *args, **kwargs):
+        """ Display the form """
+        return render(
+            request,
+            template_name = self.template_name,
+            context = self.context,
+        )
+
+    @method_decorator(transaction.atomic)
+    @method_decorator(login_required)
+    def post(self, request, *args, **kwargs):
+        user_form = self.user_form(request.POST, instance=request.user)
+        profile_form = self.profile_form(request.POST, instance=request.user.profile)
+        
 
 def userlogout(request):
     """Log the current user out, then redirect to the home page."""
