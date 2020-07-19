@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 
 from .models import Profile
@@ -32,6 +32,34 @@ class SignUpForm(UserCreationForm):
             'email',
             'password1',
             'password2',
+        )
+
+class UpdateUserForm(UserChangeForm):
+    """ Using this form, the user can change info they initially entered """
+    first_name = forms.CharField(
+        label = 'First Name',
+        max_length = 30,
+        required = True,
+    )
+    last_name = forms.CharField(
+        label = 'Last Name',
+        max_length = 30,
+        required = True,
+    )
+    email = forms.EmailField(
+        max_length = 254,
+        help_text = 'Enter a valid email address.',
+        required = True,
+    )
+
+    class Meta:
+        """ User information that can be updated. """
+        model = User
+        fields = (
+            'username',
+            'first_name',
+            'last_name',
+            'email',
         )
 
 class ProfileForm(forms.ModelForm):
