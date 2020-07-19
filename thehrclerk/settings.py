@@ -137,6 +137,7 @@ STATICFILES_DIRS = [
 # Account Verification Protocols
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'home:home'
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # From django-crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
