@@ -73,6 +73,8 @@ class UpdateUserView(View):
     @method_decorator(login_required)
     def get(self, request, *args, **kwargs):
         """ Display the form """
+        user_form = self.user_form(instance=request.user)
+        profile_form = self.profile_form(instance=request.user.profile)
         return render(
             request,
             template_name = self.template_name,
@@ -84,7 +86,9 @@ class UpdateUserView(View):
     def post(self, request, *args, **kwargs):
         user_form = self.user_form(request.POST, instance=request.user)
         profile_form = self.profile_form(request.POST, instance=request.user.profile)
-        
+        user_form.save()
+        profile_form.save()
+        return redirect('accounts:profile')
 
 def userlogout(request):
     """Log the current user out, then redirect to the home page."""
