@@ -16,11 +16,16 @@ class CustomUserAdmin(UserAdmin):
         'email',
         'get_rank',
         'first_name',
+        'get_middle_name',
         'last_name',
         'is_staff',
         'get_unit',
     )
-    list_select_related = ('profile', )
+    list_select_related = ('profile',)
+
+    def get_middle_name(self, instance):
+        return instance.profile.middle_name
+    get_middle_name.short_description = 'Middle Name'
 
     def get_rank(self, instance):
         return instance.profile.rank
