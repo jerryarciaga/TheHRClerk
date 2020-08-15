@@ -21,7 +21,11 @@
                 </tr>
                 <tr>
                     <th scope="row">Full Name</th>
+                    {% if user.profile.middle_name %}
+                    <td>{{ user.first_name }} {{ user.profile.middle_name }} {{ user.last_name }}</td>
+                    {% else %}
                     <td>{{ user.first_name }} {{ user.last_name }}</td>
+                    {% endif %}
                 </tr>
                 <tr>
                     <th scope="row">Unit</th>

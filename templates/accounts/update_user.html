@@ -21,6 +21,11 @@
                     {{ user_form.first_name|as_crispy_field }}
                 </div>
                 <div class="form-group col-md-6 mb-0">
+                    {{ profile_form.middle_name|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
                     {{ user_form.last_name|as_crispy_field }}
                 </div>
             </div>
@@ -37,6 +42,7 @@
                     {{ user_form.email|as_crispy_field }}
                 </div>
             </div>
+            <div class="form-row"></div>
         <button type="submit" class="btn btn-primary">Save Changes</button>
         </form>
     </div>
