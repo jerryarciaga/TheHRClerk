@@ -67,6 +67,11 @@ class ProfileForm(forms.ModelForm):
     This is an extension of the basic user info to fill out.
     Includes the user's rank and unit.
     """
+    middle_name = forms.CharField(
+        label = 'Middle Name',
+        max_length = 30,
+        required = False,
+    )
     rank = forms.CharField(
         label = 'Rank',
         max_length = 3,
@@ -84,6 +89,7 @@ class ProfileForm(forms.ModelForm):
         """ Specifies the form fields for additional User info. """
         model = Profile
         fields = (
+            'middle_name',
             'rank',
             'unit',
         )

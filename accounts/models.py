@@ -8,6 +8,11 @@ class Profile(models.Model):
         User,
         on_delete=models.CASCADE
     )
+    middle_name = models.CharField(
+        max_length = 30,
+        blank = True,
+        null = True,
+    )
     rank = models.CharField(
         max_length=3,
         blank=False,
