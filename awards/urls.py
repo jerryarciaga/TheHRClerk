@@ -3,5 +3,5 @@ from . import views
 
 app_name = 'awards'
 urlpatterns = [
-    url(r'^$', views.home, name='home'),
+    url(r'^$', views.AwardsHome.as_view(), name='home'),
 ]
